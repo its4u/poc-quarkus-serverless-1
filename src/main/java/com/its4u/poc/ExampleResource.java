@@ -12,6 +12,10 @@ public class ExampleResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(@QueryParam("name") String name) {
-        return "Hello " + name;
+        if (name == null) {
+            return "Hello!";
+        } else {
+            return "Hello " + name;
+        }
     }
 }
